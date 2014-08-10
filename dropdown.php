@@ -17,8 +17,6 @@
             
             
         
-        $courses = array();
-        
         $dbConnection = new DbConnection();
         
         $con = $dbConnection->getConnection(); 
@@ -29,7 +27,7 @@
         
         echo 'Course Name : ';
         
-        echo '<select multiple>';
+        echo '<select';
                
         while ( $data = mysql_fetch_object($query))
         {
@@ -37,8 +35,6 @@
            
         }        
         echo '<select>';
-         
-        //}
-        ?>
+         ?>
     </body>
 </html>
