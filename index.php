@@ -37,7 +37,8 @@ and open the template in the editor.
         
         <?php
         
-        
+        require_once 'dbconnection.php';
+                
         
         if(isset($_POST['submit_button']))
         {
@@ -48,16 +49,20 @@ and open the template in the editor.
         
         $email = $_POST['student_email'];
         
-        $mobile = $_POST['mobile'];
+        $mobile = $_POST['mobile'];   
         
-         mysql_connect('localhost', 'root', '');
+        $dbConnection = new DbConnection();
         
-        mysql_select_db('ftfl');
+        $con = $dbConnection->getConnection();       
         
-        if (mysql_query("insert into student values ('null', '$name', '$email', '$mobile')"))
+        $query = "insert into student values ('null', '$name', '$email', '$mobile')";
+ 
+        if (mysql_query($query))
             
         {
             echo 'Data Inserted'; 
+            
+            mysql_close($con);
         }
       
         

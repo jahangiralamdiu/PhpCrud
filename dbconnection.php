@@ -18,6 +18,8 @@ class DbConnection {
     public function getConnection()
     {
         $this->connection = mysql_connect('localhost', 'root', '', 'ftfl');
+        
+        mysql_select_db('ftfl');
        
         return $this->connection;
         
