@@ -27,7 +27,7 @@ and open the template in the editor.
             <input type="email" name="student_email"/>
             
             <label for="mobile">Mobile : </label>
-            <input type="number" name="student_email"/>
+            <input type="number" name="mobile"/>
             
             <input type="submit" value="Submit" name="submit_button"/>
             
@@ -36,6 +36,39 @@ and open the template in the editor.
         </form>
         
         <?php
+        
+        
+        
+        if(isset($_POST['submit_button']))
+        {
+            
+        $ID = $_POST['student_id'];
+        
+        $name = $_POST['student_name'];
+        
+        $email = $_POST['student_email'];
+        
+        $mobile = $_POST['mobile'];
+        
+         mysql_connect('localhost', 'root', '');
+        
+        mysql_select_db('ftfl');
+        
+        if (mysql_query("insert into student values ('null', '$name', '$email', '$mobile')"))
+            
+        {
+            echo 'Data Inserted'; 
+        }
+      
+        
+        
+        echo $ID;
+        
+        }
+        
+       
+        
+        
         // put your code here
         ?>
     </body>
