@@ -29,7 +29,7 @@
         
         echo 'Course Name : ';
         
-        echo '<select>';
+        echo '<select multiple>';
                
         while ( $data = mysql_fetch_object($query))
         {
