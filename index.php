@@ -29,16 +29,42 @@ and open the template in the editor.
             <label for="mobile">Mobile : </label>
             <input type="number" name="mobile"/>
             
-            <input type="submit" value="Submit" name="submit_button"/>
+            <label for="course">Select Course : </label>
             
-            </fieldset>
+            <select name="course">
+
+                <?php
+                require_once 'dbconnection.php';
+
+                $dbConnection = new DbConnection();
+
+                $con = $dbConnection->getConnection();
+
+                mysql_select_db('ftfl');
+
+                $query = mysql_query("select title from courses");
+
+                while ($data = mysql_fetch_object($query)) {
+                    echo "<option>" . $data->title . "</option>";
+                }
+                ?>
+
+            </select>
+            
+        <input type="submit" value="Submit" name="submit_button"/>
+            
+        </fieldset>
             
         </form>
         
         <?php
         
-        require_once 'dbconnection.php';
-                
+        require_once 'dbconnection.php';        
+           
+        $dbConnection = new DbConnection();
+        
+        $con = $dbConnection->getConnection();      
+                    
         
         if(isset($_POST['submit_button']))
         {
@@ -49,11 +75,8 @@ and open the template in the editor.
         
         $email = $_POST['student_email'];
         
-        $mobile = $_POST['mobile'];   
-        
-        $dbConnection = new DbConnection();
-        
-        $con = $dbConnection->getConnection();       
+        $mobile = $_POST['mobile'];  
+            
         
         $query = "insert into student values ('null', '$name', '$email', '$mobile')";
  
@@ -64,15 +87,25 @@ and open the template in the editor.
             
             mysql_close($con);
         }
-      
-        
+             
         
         echo $ID;
         
         }
         
-       
+        $query =mysql_query("select title from courses");
         
+        echo 'Course Name : ';
+        
+        echo '<select>';
+               
+        while ( $data = mysql_fetch_object($query))
+        {
+            echo "<option>".$data->title."</option>";
+           
+        }        
+        echo '<select>';
+                      
         
         // put your code here
         ?>
