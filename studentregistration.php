@@ -22,14 +22,14 @@
         if (mysql_query($queryOne))
             
         {
+            $studentID = mysql_insert_id();
+            
             foreach ($_POST['courseName'] as $courseName) 
             {                
             
-            $studentID = mysql_fetch_object(mysql_query("select max(student_id) as student_id from student"));
-            
             $courseID = mysql_fetch_object(mysql_query("select course_id from courses where title='$courseName'"));         
             
-            $queryTwo = "insert into course_map values ('null', '$studentID->student_id', '$courseID->course_id')";
+            $queryTwo = "insert into course_map values ('null', '$studentID', '$courseID->course_id')";
             
             if (mysql_query($queryTwo))
             {
