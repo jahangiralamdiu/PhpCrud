@@ -25,10 +25,16 @@ and open the template in the editor.
                 <input type="submit" name="submitBtn" value="Submit"/>
                 
             </fieldset>
-        </form>
+        </form>       
+               
+        
         <?php
         
         require_once 'dbconnection.php';
+        
+        $dbConnection = new DbConnection();
+        
+        $con = $dbConnection->getConnection();
                 
         
         if(isset($_POST['submitBtn']))
@@ -36,11 +42,7 @@ and open the template in the editor.
       
         $title = $_POST['title'];
         
-        $code = $_POST['code'];
-  
-        $dbConnection = new DbConnection();
-        
-        $con = $dbConnection->getConnection();       
+        $code = $_POST['code'];               
         
         $query = "insert into courses values ('null', '$title', '$code')";
  
@@ -49,12 +51,42 @@ and open the template in the editor.
         {
             echo 'Data Inserted'; 
             
-            mysql_close($con);
+            
         }
       
 
         }
-        // put your code here
+        
+        $query = "select * from courses";
+        
+        $resultObj = mysql_query($query);
+      
+        echo '<table border="1">';
+        
+        while($dataRow = mysql_fetch_object($resultObj))
+        {
+            echo '<tr>';
+            
+            echo '<td>'.$dataRow->course_id.'</td>';
+            
+            echo '<td>'.$dataRow->title.'</td>';
+            
+            echo '<td>'.$dataRow->code.'</td>';
+            
+            echo '<td>'."<a href='updatecourse.php?$dataRow->course_id'>Update</a>".'</td>';
+            
+            echo '<td>'."<a href='deletecourse.php?id=$dataRow->course_id'>Delete</a>".'</td>';
+            
+            echo '</tr>';
+        }
+       
+        
+        echo '</table border="1">';
+        
+        
+        
+        mysql_close($con);
+        
         ?>
     </body>
 </html>
