@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <form action="updatecourse.php" method="post">
+        <form action="update.php" method="post">
             <fieldset>
 
                 <legend>Update Course</legend>
@@ -31,27 +31,7 @@
                 <input type="submit" name="submitBtn" value="Submit"/>
 
             </fieldset>
-        </form>     
-
-
-        <?php
-        require_once 'dbconnection.php';
-
-        $dbConnection = new DbConnection();
-
-        $con = $dbConnection->getConnection();
-
-        $id = $_POST['id'];
-        $title = $_POST['title'];
-        $code = $_POST['code'];
-
-        echo '<>';
-
-        $query = "update courses set title='$title', code='$code'";
-
-        if (mysql_query($query)) {
-            echo 'Data updated successfully';
-        }
-        ?>
+            
+        </form> 
     </body>
 </html>
