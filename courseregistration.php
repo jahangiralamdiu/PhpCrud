@@ -73,7 +73,7 @@ and open the template in the editor.
             
             echo '<td>'.$dataRow->code.'</td>';
             
-            echo '<td>'."<a href='updatecourse.php?$dataRow->course_id'>Update</a>".'</td>';
+            echo '<td>'."<a href='updatecourse.php?id=$dataRow->course_id&title=$dataRow->title&code=$dataRow->code'>Update</a>".'</td>';
             
             echo '<td>'."<a href='deletecourse.php?id=$dataRow->course_id'>Delete</a>".'</td>';
             
