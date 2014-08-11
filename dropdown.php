@@ -3,16 +3,18 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-        
-    <form method="post">
-        <label for="courseName">Name : </label>
-        <input type="text" name="courseName"/>
-    </form>
-        
+        <title></title>           
     </head>
+    
     <body>
+        
+        <form action="dropdown.php" method="post">
+            <label for="courseName">Name : </label>
+            <input type="text" name="courseName"/>
+        </form>
+        
         <?php
+        
          require_once 'dbconnection.php';                
             
             
@@ -35,6 +37,7 @@
            
         }        
         echo '<select>';
+        
          ?>
     </body>
 </html>
