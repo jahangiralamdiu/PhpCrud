@@ -27,15 +27,15 @@
         {
             $studentID = mysql_fetch_object(mysql_query("select max(student_id) as student_id from student"));
             
-            $courseID = mysql_fetch_object(mysql_query("select course_id from courses where title='Laravel'"));
+            $courseID = mysql_fetch_object(mysql_query("select course_id from courses where title='$courseName'"));         
             
-            echo $courseID->course_id. ' '.$studentID->student_id;
-            
-           $queryTwo = "insert into course_map values ('null', '$courseID->course_id', '$studentID->student_id')";
+            $queryTwo = "insert into course_map values ('null', '$courseID->course_id', '$studentID->student_id')";
             
             if (mysql_query($queryTwo))
             {
                 echo 'Student Added Successfully'; 
+                
+                echo '<a href="index.php">Add another Student</a>';
             }                   
            
         }

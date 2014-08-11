@@ -42,7 +42,7 @@ and open the template in the editor.
                 $query = mysql_query("select title from courses");
 
                 while ($data = mysql_fetch_object($query)) {
-                    echo "<option value = $data->title >" . $data->title . "</option>";
+                    echo "<option value = '$data->title' >" . $data->title . "</option>";
                 }
                 ?>
 
