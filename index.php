@@ -28,7 +28,7 @@ and open the template in the editor.
             
             <label for="course">Select Course : </label>
             
-            <select name="courseName">
+            <select name="courseName[]" multiple="multiple">
 
                 <?php
                 require_once 'dbconnection.php';
