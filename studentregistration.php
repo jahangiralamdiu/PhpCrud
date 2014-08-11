@@ -24,12 +24,11 @@
         {
             $studentID = mysql_insert_id();
             
-            foreach ($_POST['courseName'] as $courseName) 
-            {                
+            foreach ($_POST['courseID'] as $courseID) 
+            {           
+                
             
-            $courseID = mysql_fetch_object(mysql_query("select course_id from courses where title='$courseName'"));         
-            
-            $queryTwo = "insert into course_map values ('null', '$studentID', '$courseID->course_id')";
+            $queryTwo = "insert into course_map values ('null', '$studentID', '$courseID')";
             
             if (mysql_query($queryTwo))
             {
@@ -40,7 +39,7 @@
             
             echo 'Student Added Successfully'; 
                 
-            echo '<a href="index.php">Add another Student</a>';
+            echo '<br/> <a href="index.php">Add another Student</a>';
            
         }
         

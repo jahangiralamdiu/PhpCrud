@@ -28,7 +28,7 @@ and open the template in the editor.
             
             <label for="course">Select Course : </label>
             
-            <select name="courseName[]" multiple="multiple">
+            <select name="courseID[]" multiple="multiple">
 
                 <?php
                 require_once 'dbconnection.php';
@@ -39,10 +39,10 @@ and open the template in the editor.
 
                 mysql_select_db('ftfl');
 
-                $query = mysql_query("select title from courses");
+                $query = mysql_query("select * from courses");
 
                 while ($data = mysql_fetch_object($query)) {
-                    echo "<option value = '$data->title' >" . $data->title . "</option>";
+                    echo "<option value = '$data->course_id' >" . $data->title . "</option>";
                 }
                 ?>
 
