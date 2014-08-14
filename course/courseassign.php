@@ -37,7 +37,7 @@ and open the template in the editor.
                 <div class="col-md-3">
 
                     <ul class="nav nav-pills nav-stacked col-md-6 ">
-                        
+
                         <li><a href="../dashboard.html">Dashboard</a></li>
                         <li class="active"><a href="../student/index.php">Student</a></li>
                         <li><a href="index.php">Course</a></li>
@@ -52,43 +52,43 @@ and open the template in the editor.
                     <div class="row">
 
                         <div class="col-md-10">
-                            
+
                             <form action="assigncourse.php" method="post">
-            
-            <fieldset>
-                
-            <legend>Course Registration</legend>
-            
-            <label for="student_name">Student Name : </label>
-            <input type="text" name="student_name"/>
-            
-            <select name="courseID[]" multiple="multiple">
 
-                <?php
-                require_once '../dbconnection.php';
+                                <fieldset>
 
-                $dbConnection = new DbConnection();
+                                    <legend>Course Registration</legend>
 
-                $con = $dbConnection->getConnection();
+                                    <label for="student_name">Student Name : </label>
+                                    <input type="text" name="student_name"/>
 
-                mysql_select_db('ftfl');
+                                    <select name="courseID[]" multiple="multiple">
 
-                $query = mysql_query("select * from courses");
+                                        <?php
+                                        require_once '../dbconnection.php';
 
-                while ($data = mysql_fetch_object($query)) {
-                    echo "<option value = '$data->course_id' >" . $data->title . "</option>";
-                }
-                ?>
+                                        $dbConnection = new DbConnection();
 
-            </select>
-            
-        <input type="submit" value="Submit" name="submit_button"/>
-            
-        </fieldset>
-            
-        </form>
+                                        $con = $dbConnection->getConnection();
 
-                            
+                                        mysql_select_db('ftfl');
+
+                                        $query = mysql_query("select * from courses");
+
+                                        while ($data = mysql_fetch_object($query)) {
+                                            echo "<option value = '$data->course_id' >" . $data->title . "</option>";
+                                        }
+                                        ?>
+
+                                    </select>
+
+                                    <input type="submit" value="Submit" name="submit_button"/>
+
+                                </fieldset>
+
+                            </form>
+
+
 
                         </div>
 
@@ -96,7 +96,15 @@ and open the template in the editor.
 
                 </div>
 
-            </div>            
+            </div>   
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <p>@Copy Right Information. Developed by Md. Jahangir Alam</p>                     
+                    </div>
+                </div>
+            </div>
 
         </div>
 
