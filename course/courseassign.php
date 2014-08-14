@@ -53,16 +53,27 @@ and open the template in the editor.
 
                         <div class="col-md-10">
 
-                            <form action="assigncourse.php" method="post">
+                            <form action="assign.php" method="post">
 
                                 <fieldset>
 
-                                    <legend>Course Registration</legend>
+                                    <legend>Course Assign</legend>
 
                                     <label for="student_name">Student Name : </label>
-                                    <input type="text" name="student_name"/>
+                                    
+                                    <?php
+                                    
+                                    $studentID = $_GET['id'];
+                                    
+                                    $name = $_GET['name'];
+                                    
+                                    echo "<input class='input-lg' name='student_id' value='$studentID' type='hidden'/>";
+                                    
+                                    echo "<input class='input-lg' name='student_name' value='$name' type='text'/>";
+                                    
+                                    ?>
 
-                                    <select name="courseID[]" multiple="multiple">
+                                    <select name="course_id[]" multiple="multiple">
 
                                         <?php
                                         require_once '../dbconnection.php';

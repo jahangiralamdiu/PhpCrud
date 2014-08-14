@@ -62,20 +62,6 @@ and open the template in the editor.
 
             $con = $dbConnection->getConnection();
 
-
-            if (isset($_POST['submitBtn'])) {
-
-                $title = $_POST['title'];
-
-                $code = $_POST['code'];
-
-                $query = "insert into courses values ('null', '$title', '$code')";
-
-                if (mysql_query($query)) {
-                    echo 'Data Inserted';
-                }
-            }
-
             $query = "select * from courses";
 
             $resultObj = mysql_query($query);

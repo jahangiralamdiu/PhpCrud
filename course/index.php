@@ -31,7 +31,7 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
 
                 <nav class="navbar navbar-default" role="navigation">
@@ -50,9 +50,9 @@ and open the template in the editor.
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            
-                            <li><a href="http://localhost/PhpCrud/dashboard.php"><span class="glyphicon glyphicon-home"> Home</span></a></li>
-                            
+
+                            <li><a href="http://localhost/PhpCrud/dashboard.htmp"><span class="glyphicon glyphicon-home"> Home</span></a></li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
@@ -60,22 +60,22 @@ and open the template in the editor.
                                     <li><a href="http://localhost/PhpCrud/student/studentregistration.php">Add New</a></li>
                                     <li class="divider"></li>
                                     <li><a href="http://localhost/PhpCrud/student/studentregistration.php">View</a></li>                                
-                                    
+
                                 </ul>
                             </li>                          
-                             
-                            
-                             <li class="dropdown">
+
+
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Course<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="http://localhost/PhpCrud/course/index.php">courses</a></li>
                                     <li><a href="http://localhost/PhpCrud/course/courseregistration.php">Add New</a></li>
                                     <li class="divider"></li>
                                     <li><a href="http://localhost/PhpCrud/course/courseregistration.php">View</a></li>                                
-                                    
+
                                 </ul>
                             </li>
-                            
+
                             <li><a href="#">About Me</a></li> 
                         </ul>
                         <form class="navbar-form navbar-right" role="search">
@@ -84,7 +84,7 @@ and open the template in the editor.
                             </div>
                             <button type="submit" class="btn btn-default glyphicon glyphicon-search"></button>
                         </form>
-                        
+
                     </div><!-- /.navbar-collapse -->
 
                 </nav>
@@ -119,45 +119,39 @@ and open the template in the editor.
                                 <table class="table">
                                     <thead>
                                     <th>ID </th>
-                                    <th>Title</th>
-                                    <th>View</th>
+                                    <th>Title</th>                                 
                                     <th>Update</th>
                                     <th>Delete</th>                                  
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td>1001</td>
-                                            <td>Laravel</td>
-                                            <td><a>View</a></td>
-                                            <td><a href="#">Update</a></td>
-                                            <td><a class="alert-link" href="#">Delete</a></td>                                         
-                                        </tr>
+                                        
+                                        <?php
+                                        require_once '../dbconnection.php';
 
-                                        <tr>
-                                            <td>102</td>
-                                            <td>ASP.Net</td>
-                                            <td><a>View</a></td>
-                                            <td><a href="#">Update</a></td>
-                                            <td><a class="alert-link" href="#">Delete</a></td>                                            
-                                        </tr>
+                                        $dbConnection = new DbConnection();
 
-                                        <tr>
-                                            <td>103</td>
-                                            <td>Unity-3D</td>
-                                            <td><a>View</a></td>
-                                            <td><a href="#">Update</a></td>
-                                            <td><a class="alert-link" href="#">Delete</a></td>                                          
-                                        </tr>
+                                        $con = $dbConnection->getConnection();
 
-                                        <tr>
-                                            <td>104</td>
-                                            <td>Foundation</td>
-                                            <td><a>View</a></td>
-                                            <td><a href="#">Update</a></td>
-                                            <td><a class="alert-link" href="#">Delete</a></td>
+                                        $query = "select * from courses";
 
-                                        </tr>                                        
+                                        $resultObj = mysql_query($query);
+
+                                        while ($dataRow = mysql_fetch_object($resultObj)) {
+                                            echo '<tr>';
+
+                                            echo '<td>' . $dataRow->course_id . '</td>';
+
+                                            echo '<td>' . $dataRow->title . '</td>';
+
+                                            echo '<td>' . "<a href='updatecourse.php?id=$dataRow->course_id&title=$dataRow->title&code=$dataRow->code'>Update</a>" . '</td>';
+
+                                            echo '<td>' . "<a href='deletecourse.php?id=$dataRow->course_id'>Delete</a>" . '</td>';
+
+                                            echo '</tr>';
+                                        }
+                                        mysql_close($con);
+                                        ?>                                       
 
                                     </tbody>
 
@@ -172,7 +166,7 @@ and open the template in the editor.
                 </div>
 
             </div>  
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="well">
