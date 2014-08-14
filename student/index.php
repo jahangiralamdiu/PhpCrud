@@ -38,9 +38,9 @@ and open the template in the editor.
 
                     <ul class="nav nav-pills nav-stacked col-md-6 ">
                         
-                        <li><a href="#">Home</a></li>
-                        <li class="active"><a href="#">Student</a></li>
-                        <li><a href="#">Course</a></li>
+                        <li class="active"><a href="#">Dashboard</a></li>
+                        <li><a href="student/index.php">Student</a></li>
+                        <li><a href="course/index.php">Course</a></li>
                         <li><a href="#">Help</a></li>
 
                     </ul>
@@ -54,11 +54,11 @@ and open the template in the editor.
                         <div class="col-md-12">
 
                             <h3>Students</h3>
-                            
+
                             <a href="#"><button class="btn-primary">Add Student</button></a>
 
                             <div class="table-responsive">
-                                
+
                                 <table class="table">
                                     <thead>
                                     <th>ID </th>
@@ -68,7 +68,7 @@ and open the template in the editor.
                                     <th>Delete</th>
                                     <th>Assign Course</th>
                                     </thead>
-                                    
+
                                     <tbody>
                                         <tr>
                                             <td>1001</td>
@@ -78,7 +78,7 @@ and open the template in the editor.
                                             <td><a class="alert-link" href="#">Delete</a></td>
                                             <td><a class="alert-link" href="#">Assign Course</a></td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td>1002</td>
                                             <td>Abrar</td>
@@ -87,7 +87,7 @@ and open the template in the editor.
                                             <td><a class="alert-link" href="#">Delete</a></td>
                                             <td><a class="alert-link" href="#">Assign Course</a></td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td>1003</td>
                                             <td>Tanjim</td>
@@ -96,7 +96,7 @@ and open the template in the editor.
                                             <td><a class="alert-link" href="#">Delete</a></td>
                                             <td><a class="alert-link" href="#">Assign Course</a></td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td>1004</td>
                                             <td>Toufiq</td>
@@ -105,7 +105,7 @@ and open the template in the editor.
                                             <td><a class="alert-link" href="#">Delete</a></td>
                                             <td><a class="alert-link" href="#">Assign Course</a></td>
                                         </tr>
-                                        
+
                                         <tr>
                                             <td>1005</td>
                                             <td>Ishrat</td>
@@ -114,11 +114,11 @@ and open the template in the editor.
                                             <td><a class="alert-link" href="#">Delete</a></td>
                                             <td><a class="alert-link" href="#">Assign Course</a></td>
                                         </tr>
-                                        
+
                                     </tbody>
-                                    
+
                                 </table>
-                                
+
                             </div>
 
                         </div>
