@@ -39,8 +39,8 @@ and open the template in the editor.
                     <ul class="nav nav-pills nav-stacked col-md-6 ">
                         
                         <li><a href="#">Home</a></li>
-                        <li class="active"><a href="#">Student</a></li>
-                        <li><a href="#">Course</a></li>
+                        <li ><a href="#">Student</a></li>
+                        <li class="active"><a href="#">Course</a></li>
                         <li><a href="#">Help</a></li>
 
                     </ul>
@@ -53,26 +53,33 @@ and open the template in the editor.
 
                         <div class="col-md-12">
 
-                            <h3>Students</h3>
+                            <h3>Courses</h3>
                             
-                            <a href="#"><button class="btn-primary">Add Student</button></a>
+                            <a href="#"><button class="btn-primary">Add new Course</button></a>
 
                             <div class="table-responsive">
                                 
                                 <table class="table">
                                     <thead>
                                     <th>ID </th>
-                                    <th>Name</th>
+                                    <th>Title</th>
                                     <th>View</th>
                                     <th>Update</th>
-                                    <th>Delete</th>
-                                    <th>Assign Course</th>
+                                    <th>Delete</th>                                  
                                     </thead>
                                     
                                     <tbody>
                                         <tr>
                                             <td>1001</td>
-                                            <td>Jahangir</td>
+                                            <td>Laravel</td>
+                                            <td><a>View</a></td>
+                                            <td><a href="#">Update</a></td>
+                                            <td><a class="alert-link" href="#">Delete</a></td>                                         
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>102</td>
+                                            <td>ASP.Net</td>
                                             <td><a>View</a></td>
                                             <td><a href="#">Update</a></td>
                                             <td><a class="alert-link" href="#">Delete</a></td>
@@ -80,41 +87,22 @@ and open the template in the editor.
                                         </tr>
                                         
                                         <tr>
-                                            <td>1002</td>
-                                            <td>Abrar</td>
+                                            <td>103</td>
+                                            <td>Unity-3D</td>
                                             <td><a>View</a></td>
                                             <td><a href="#">Update</a></td>
-                                            <td><a class="alert-link" href="#">Delete</a></td>
-                                            <td><a class="alert-link" href="#">Assign Course</a></td>
+                                            <td><a class="alert-link" href="#">Delete</a></td>                                          
                                         </tr>
                                         
                                         <tr>
-                                            <td>1003</td>
-                                            <td>Tanjim</td>
+                                            <td>104</td>
+                                            <td>Foundation</td>
                                             <td><a>View</a></td>
                                             <td><a href="#">Update</a></td>
                                             <td><a class="alert-link" href="#">Delete</a></td>
-                                            <td><a class="alert-link" href="#">Assign Course</a></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>1004</td>
-                                            <td>Toufiq</td>
-                                            <td><a>View</a></td>
-                                            <td><a href="#">Update</a></td>
-                                            <td><a class="alert-link" href="#">Delete</a></td>
-                                            <td><a class="alert-link" href="#">Assign Course</a></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>1005</td>
-                                            <td>Ishrat</td>
-                                            <td><a>View</a></td>
-                                            <td><a href="#">Update</a></td>
-                                            <td><a class="alert-link" href="#">Delete</a></td>
-                                            <td><a class="alert-link" href="#">Assign Course</a></td>
-                                        </tr>
-                                        
+                                           
+                                        </tr>                                        
+                                      
                                     </tbody>
                                     
                                 </table>
