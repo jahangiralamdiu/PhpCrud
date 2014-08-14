@@ -37,9 +37,9 @@ and open the template in the editor.
                 <div class="col-md-3">
 
                     <ul class="nav nav-pills nav-stacked col-md-6 ">
-                        <li class="active"><a href="#">Dashboard</a></li>
-                        <li><a href="student/index.php">Student</a></li>
-                        <li><a href="course/index.php">Course</a></li>
+                        <li><a href="../dashboard.html">Dashboard</a></li>
+                        <li><a href="../student/index.php">Student</a></li>
+                        <li class="active"><a href="index.php">Course</a></li>
                         <li><a href="#">Help</a></li>
 
                     </ul>
@@ -53,7 +53,7 @@ and open the template in the editor.
 
                             <h3>Courses</h3>
 
-                            <a href="#"><button class="btn-primary">Add new Course</button></a>
+                            <a href="courseregistration.php"><button class="btn-primary">Add new Course</button></a>
 
                             <div class="table-responsive">
 

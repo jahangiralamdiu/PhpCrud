@@ -38,9 +38,9 @@ and open the template in the editor.
 
                     <ul class="nav nav-pills nav-stacked col-md-6 ">
                         
-                        <li class="active"><a href="#">Dashboard</a></li>
-                        <li><a href="student/index.php">Student</a></li>
-                        <li><a href="course/index.php">Course</a></li>
+                        <li><a href="../dashboard.html">Dashboard</a></li>
+                        <li class="active"><a  href="index.php">Student</a></li>
+                        <li><a href="../course/index.php">Course</a></li>
                         <li><a href="#">Help</a></li>
 
                     </ul>
@@ -55,7 +55,7 @@ and open the template in the editor.
 
                             <h3>Students</h3>
 
-                            <a href="#"><button class="btn-primary">Add Student</button></a>
+                            <a href="studentregistration.php"><button class="btn-primary">Add Student</button></a>
 
                             <div class="table-responsive">
 
@@ -103,7 +103,7 @@ and open the template in the editor.
                                             <td><a>View</a></td>
                                             <td><a href="#">Update</a></td>
                                             <td><a class="alert-link" href="#">Delete</a></td>
-                                            <td><a class="alert-link" href="#">Assign Course</a></td>
+                                            <td><a class="alert-link" href="../course/courseassign.php">Assign Course</a></td>
                                         </tr>
 
                                         <tr>
