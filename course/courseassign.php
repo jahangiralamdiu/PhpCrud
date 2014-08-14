@@ -98,9 +98,7 @@ and open the template in the editor.
                                 </fieldset>
 
                             </form>
-
-
-
+                            
                         </div>
 
                     </div>                    
